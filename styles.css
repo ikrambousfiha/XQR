@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Crimson Text', Georgia, serif;
+  background: url('home.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #741D2D;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('home.jpeg') no-repeat center center;
+  background-size: cover;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.container {
+  max-width: 380px;
+  margin: 15px auto;
+  background: rgba(248, 242, 237, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(116, 29, 45, 0.15);
+  padding: 30px 24px 24px 24px;
+  animation: fadeIn 1.2s;
+  border: 1px solid rgba(116, 29, 45, 0.08);
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 16px auto;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  animation: logoFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(116, 29, 45, 0.1));
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+h1 {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(116, 29, 45, 0.08);
+  color: #741D2D;
+}
+h1 span {
+  color: #E67E22;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #F8F2ED, #f0e8e0);
+  color: #741D2D;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 16px rgba(116, 29, 45, 0.12);
+  border: 1px solid rgba(116, 29, 45, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Crimson Text', Georgia, serif;
+  letter-spacing: 0.6px;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(116, 29, 45, 0.08), transparent);
+  transition: left 0.5s;
+}
+.btn:hover::before {
+  left: 100%;
+}
+.btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 1px 3px rgba(116, 29, 45, 0.15));
+}
+.btn:hover, .btn:focus {
+  background: linear-gradient(135deg, #f0e8e0, #e8dcd0);
+  box-shadow: 0 6px 20px rgba(116, 29, 45, 0.2);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(116, 29, 45, 0.2);
+  color: #741D2D;
+}
+.btn:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+footer {
+  text-align: center;
+  color: #741D2D;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  opacity: 0.7;
+  font-weight: 500;
+  font-family: 'Crimson Text', Georgia, serif;
+}
+
+/* Responsive Design - Optimisé Smartphone */
+@media (max-width: 480px) {
+  .container {
+    max-width: 92vw;
+    margin: 10px auto;
+    padding: 24px 18px 20px 18px;
+    border-radius: 14px;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 14px 16px;
+    gap: 14px;
+    border-radius: 12px;
+  }
+  .btn img {
+    width: 24px;
+    height: 24px;
+  }
+  .contact-buttons {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    max-width: 95vw;
+    padding: 20px 15px 16px 15px;
+  }
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .btn {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+  .btn img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Tablette */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 32px 26px 26px 26px;
+  }
+  .logo {
+    width: 110px;
+    height: 110px;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+  .btn {
+    font-size: 1.15rem;
+    padding: 18px 22px;
+  }
+  .btn img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Grands écrans */
+@media (min-width: 769px) {
+  .container {
+    max-width: 400px;
+    margin: 25px auto;
+    padding: 35px 28px 28px 28px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  h1 {
+    font-size: 2.6rem;
+  }
+  .btn {
+    font-size: 1.2rem;
+    padding: 18px 24px;
+  }
+  .btn img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+} 
